@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Teledocer.Models.founder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_add)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_reload)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_add)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_reload)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clients.Name_corp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Inn_uch">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Inn_uch">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Inn_uch">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

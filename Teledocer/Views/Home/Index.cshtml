@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row">
+    <style>
+        .center {
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 30%;
+        }
+     </style>
+     <div class="center">
+         <a asp-controller="Types" asp-action="Index" class="btn btn-warning" method="post">Типы</a>
+         <a asp-controller="Clients" asp-action="Index" class="btn btn-success" method="post">Клиенты</a>
+         <a asp-controller="founders" asp-action="Index" class="btn btn-primary" method="post">Учредители</a>
+     </div>
+</div>

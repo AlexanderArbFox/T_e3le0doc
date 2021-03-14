@@ -1,0 +1,24 @@
+﻿@model Teledocer.Models.Types
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробнее</h2>
+
+<div>
+    <h4>Типы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_of_type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name_of_type)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_type">Изменить</a> |
+    <a asp-action="Index">Вернуться</a>
+</div>

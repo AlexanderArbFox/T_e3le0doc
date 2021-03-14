@@ -1,0 +1,49 @@
+﻿@model Teledocer.Models.founder
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>founder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id_founder" class="control-label"></label>
+                <select asp-for="Id_founder" class="form-control" asp-items="ViewBag.Id_founder"></select>
+                <span asp-validation-for="Id_founder" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Inn_uch" />
+            <div class="form-group">
+                <label asp-for="Fio" class="control-label"></label>
+                <input asp-for="Fio" class="form-control" />
+                <span asp-validation-for="Fio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_add" class="control-label"></label>
+                <input asp-for="Date_add" class="form-control" />
+                <span asp-validation-for="Date_add" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_reload" class="control-label"></label>
+                <input asp-for="Date_reload" class="form-control" />
+                <span asp-validation-for="Date_reload" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

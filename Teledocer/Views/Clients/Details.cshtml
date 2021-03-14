@@ -1,0 +1,48 @@
+﻿@model Teledocer.Models.Clients
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Clients</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Inn_kl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inn_kl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_corp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name_corp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_add)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_add)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_reload)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_reload)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_clients">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
