@@ -55,16 +55,8 @@ namespace Teledocer
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=founders}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
-            /*  app.UseMvc(routes =>
-               {
-                   routes.MapRoute(
-                       name: "default",
-                       template: "{controller=TypesController}/{action=Index}/{id?}"
-                       );
-               });
-            //  DummyData_n.Initialize(app);*/
         }
     }
 }
