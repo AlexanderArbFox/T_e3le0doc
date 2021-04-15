@@ -12,6 +12,7 @@ namespace Teledocer.Models
         [Required]
         public int Id_founder { get; set; }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Inn_uch { get; set; }
         [Required]
         public string Fio { get; set; }

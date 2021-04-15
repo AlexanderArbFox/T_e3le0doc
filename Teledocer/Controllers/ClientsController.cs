@@ -38,30 +38,25 @@ namespace Teledocer.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["Type"] = new SelectList(_context.Types, "Id_type", "Name_of_type");
             return View(clients);
         }
 
         // GET: Clients/Create
         public IActionResult Create()
         {
+            ViewData["Type"] = new SelectList(_context.Types, "Id_type", "Name_of_type"); // textbox берем значения из типов
             return View();
         }
 
-        // POST: Clients/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id_clients,Inn_kl,Name_corp,Type,Data_add,Data_reload")] Clients clients)
+        public async Task<IActionResult> Create(Clients clients)
         {
+            DateTime f = DateTime.Now;
             if (ModelState.IsValid)
             {
-             /*   new Clients()
-                {
-                    Data_reload = DateTime.Now,
-                    Data_add = DateTime.Now
-                };*/
                 _context.Add(clients);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -69,10 +64,11 @@ namespace Teledocer.Controllers
             }
             return View(clients);
         }
-
-        // GET: Clients/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+           
+           
+            public async Task<IActionResult> Edit(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
@@ -83,6 +79,7 @@ namespace Teledocer.Controllers
             {
                 return NotFound();
             }
+            ViewData["Type"] = new SelectList(_context.Types, "Id_type", "Name_of_type");
             return View(clients);
         }
 
